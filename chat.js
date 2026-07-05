@@ -24,7 +24,7 @@
    - Asegúrate de habilitar CORS en n8n si la web corre en un
      dominio o puerto distinto al de n8n.
    ================================================================ */
-const WEBHOOK_URL = 'http://localhost:5678/webhook/web-Thia';
+const WEBHOOK_URL = 'proxy.php';
 
 
 /* ================================================================
@@ -162,8 +162,7 @@ async function sendMessage() {
 const response = await fetch(WEBHOOK_URL, {
       method:  'POST',
       headers: { 
-        'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa('mecanicocaptur@gmail.com:123.Captur.mec.123')
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         message:   text,
